@@ -8,14 +8,19 @@ const Home = () => {
     <div className="min-h-screen flex items-center relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
         <div className="relative">
-          {/* Profile Image with Blob - Positioned over text */}
-          <div className="absolute top-0 right-8 lg:right-16 z-10">
+          {/* Profile Image with Glow Effect - Positioned over "Hello I'm" text */}
+          <div className="absolute top-4 right-12 lg:right-20 z-10">
             <div className="relative">
-              {/* Blob Background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-700/20 to-slate-600/20 rounded-full blob-animation transform -translate-x-2 -translate-y-2 w-48 h-48"></div>
+              {/* Animated Glow Ring */}
+              <div className="absolute inset-0 rounded-full animate-pulse">
+                <div className="w-36 h-36 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-md"></div>
+              </div>
+              
+              {/* Subtle Ring Effect */}
+              <div className="absolute inset-0 w-36 h-36 rounded-full border border-cyan-400/30 animate-spin" style={{ animationDuration: '8s' }}></div>
               
               {/* Profile Image */}
-              <div className="relative w-44 h-44 rounded-full overflow-hidden border-2 border-slate-700/30 shadow-2xl opacity-70">
+              <div className="relative w-32 h-32 rounded-full overflow-hidden border border-slate-600/40 shadow-xl brightness-110">
                 <img
                   src="/lovable-uploads/a8a8add2-c56f-429e-b82e-477884bcdf1e.png"
                   alt="Lamel Kekana"
@@ -67,7 +72,7 @@ const Home = () => {
               </Button>
               <Button
                 variant="outline"
-                className="border-slate-600 text-slate-300 hover:bg-slate-800 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                className="border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-cyan-400 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
                 asChild
               >
                 <Link to="/contact">

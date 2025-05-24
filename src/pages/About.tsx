@@ -1,34 +1,75 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Database, BarChart3, PieChart, Brain, Cloud, GitBranch, Laptop, Server, FileSpreadsheet, Github, Container, Activity } from "lucide-react";
 
 const About = () => {
   const skills = [
     {
-      name: "Machine Learning",
-      points: ["Advanced algorithm implementation", "Model optimization and tuning"]
+      title: "Data Manipulation",
+      icon: Database,
+      points: ["Data cleaning", "Pandas, NumPy"]
     },
     {
-      name: "Data Analysis",
-      points: ["Statistical modeling", "Predictive analytics"]
+      title: "Data Analysis",
+      icon: BarChart3,
+      points: ["Exploratory Data Analysis (EDA)"]
     },
     {
-      name: "Deep Learning",
-      points: ["Neural network architectures", "Computer vision applications"]
+      title: "Data Visualization",
+      icon: PieChart,
+      points: ["Matplotlib, Seaborn, Plotly", "Tableau, Power BI"]
     },
     {
-      name: "Data Visualization",
-      points: ["Interactive dashboards", "Statistical graphics"]
+      title: "Machine Learning",
+      icon: Brain,
+      points: ["Supervised and unsupervised learning", "Scikit-learn, TensorFlow, NLP"]
     },
     {
-      name: "Big Data",
-      points: ["Distributed computing", "Real-time data processing"]
+      title: "Databases",
+      icon: Server,
+      points: ["SQL"]
+    },
+    {
+      title: "Cloud Platforms",
+      icon: Cloud,
+      points: ["AWS", "Cloud computing, deployment and storage"]
+    },
+    {
+      title: "Version Control",
+      icon: GitBranch,
+      points: ["Git/Github"]
     }
   ];
 
   const tools = [
-    "Python", "R", "SQL", "TensorFlow", "PyTorch", "Scikit-learn",
-    "Pandas", "NumPy", "Matplotlib", "Seaborn", "Tableau", "Power BI",
-    "Apache Spark", "Hadoop", "Docker", "AWS", "Google Cloud", "Azure"
+    {
+      title: "Jupyter notebooks/Lab",
+      icon: Laptop
+    },
+    {
+      title: "MySQL",
+      icon: Server
+    },
+    {
+      title: "Excel",
+      icon: FileSpreadsheet
+    },
+    {
+      title: "AWS",
+      icon: Cloud
+    },
+    {
+      title: "PowerBI",
+      icon: Activity
+    },
+    {
+      title: "Git/github",
+      icon: Github
+    },
+    {
+      title: "Docker",
+      icon: Container
+    }
   ];
 
   return (
@@ -40,10 +81,9 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate data scientist with expertise in machine learning, statistical analysis, 
-            and data visualization. I love transforming complex data into actionable insights that 
-            drive business decisions. With a strong foundation in mathematics and computer science, 
-            I tackle challenging problems with innovative solutions.
+            Passionate data scientist with expertise in machine learning, data visualization, 
+            and statistical analysis. I transform complex data into actionable insights that 
+            drive business decisions and create meaningful impact.
           </p>
         </div>
 
@@ -52,26 +92,22 @@ const About = () => {
           {/* Skills Card */}
           <Card className="bg-slate-800/50 border-slate-700 card-hover">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold gradient-text">Skills</CardTitle>
+              <CardTitle className="text-2xl font-bold text-slate-200 mb-4">
+                Skills
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               {skills.map((skill, index) => (
-                <div key={skill.name} className="flex items-start">
-                  <div className="flex flex-col items-center mr-4 mt-1">
-                    <div className="w-1 h-6 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full"></div>
-                    {index < skills.length - 1 && (
-                      <div className="w-px h-8 bg-slate-600 mt-1"></div>
-                    )}
-                  </div>
+                <div key={skill.title} className="flex items-start space-x-4">
+                  <div className="w-1 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full flex-shrink-0 mt-1" style={{ height: '60px' }}></div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-slate-200 mb-2">
-                      {skill.name}
-                    </h3>
-                    <ul className="space-y-1">
-                      {skill.points.map((point, idx) => (
-                        <li key={idx} className="text-slate-400 text-sm">
-                          • {point}
-                        </li>
+                    <div className="flex items-center space-x-3 mb-2">
+                      <skill.icon className="w-5 h-5 text-cyan-400" />
+                      <h3 className="text-lg font-semibold text-slate-200">{skill.title}</h3>
+                    </div>
+                    <ul className="space-y-1 ml-8">
+                      {skill.points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="text-slate-400 text-sm">• {point}</li>
                       ))}
                     </ul>
                   </div>
@@ -83,17 +119,20 @@ const About = () => {
           {/* Tools & Platforms Card */}
           <Card className="bg-slate-800/50 border-slate-700 card-hover">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold gradient-text">Tools & Platforms</CardTitle>
+              <CardTitle className="text-2xl font-bold text-slate-200 mb-4">
+                Tools & Platforms
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 gap-3">
-                {tools.map((tool, index) => (
-                  <div key={tool} className="flex items-center">
-                    <div className="w-1 h-4 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full mr-3"></div>
-                    <span className="text-slate-300">{tool}</span>
+            <CardContent className="space-y-4">
+              {tools.map((tool, index) => (
+                <div key={tool.title} className="flex items-center space-x-4">
+                  <div className="w-1 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full flex-shrink-0" style={{ height: '24px' }}></div>
+                  <div className="flex items-center space-x-3">
+                    <tool.icon className="w-5 h-5 text-cyan-400" />
+                    <span className="text-slate-300 font-medium">{tool.title}</span>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </CardContent>
           </Card>
         </div>
