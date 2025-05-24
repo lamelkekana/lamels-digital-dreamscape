@@ -9,18 +9,18 @@ const Home = () => {
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
         <div className="relative">
           {/* Profile Image with Glow Effect - Positioned over "Hello I'm" text */}
-          <div className="absolute top-4 right-12 lg:right-20 z-10">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
             <div className="relative">
               {/* Animated Glow Ring */}
               <div className="absolute inset-0 rounded-full animate-pulse">
-                <div className="w-36 h-36 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-md"></div>
+                <div className="w-40 h-40 rounded-full bg-gradient-to-r from-slate-500/20 to-slate-600/20 blur-lg"></div>
               </div>
               
               {/* Subtle Ring Effect */}
-              <div className="absolute inset-0 w-36 h-36 rounded-full border border-cyan-400/30 animate-spin" style={{ animationDuration: '8s' }}></div>
+              <div className="absolute inset-0 w-40 h-40 rounded-full border border-slate-500/30 animate-spin" style={{ animationDuration: '10s' }}></div>
               
               {/* Profile Image */}
-              <div className="relative w-32 h-32 rounded-full overflow-hidden border border-slate-600/40 shadow-xl brightness-110">
+              <div className="relative w-36 h-36 rounded-full overflow-hidden border border-slate-500/40 shadow-xl brightness-125">
                 <img
                   src="/lovable-uploads/a8a8add2-c56f-429e-b82e-477884bcdf1e.png"
                   alt="Lamel Kekana"
@@ -31,21 +31,21 @@ const Home = () => {
           </div>
 
           {/* Text Content */}
-          <div className="space-y-8 max-w-4xl">
+          <div className="space-y-8 max-w-4xl pt-20">
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold text-slate-100 leading-tight">
+              <h1 className="text-5xl md:text-7xl font-bold text-slate-100 leading-tight text-center">
                 Hello I'm{" "}
                 <span className="gradient-text">Lamel Kekana</span>
               </h1>
-              <p className="text-2xl text-slate-400 ml-2">I am a data scientist</p>
+              <p className="text-2xl text-slate-400 text-center">I am a data scientist</p>
             </div>
             
-            <p className="text-lg text-slate-300 max-w-2xl leading-relaxed ml-2">
+            <p className="text-lg text-slate-300 max-w-2xl leading-relaxed text-center mx-auto">
               Explore my portfolio for a comprehensive collection of my professional work.
             </p>
             
             {/* Social Links */}
-            <div className="flex space-x-4 ml-2">
+            <div className="flex justify-center space-x-4">
               <a
                 href="https://github.com"
                 target="_blank"
@@ -65,14 +65,14 @@ const Home = () => {
             </div>
             
             {/* Action Buttons */}
-            <div className="flex space-x-4 ml-2">
+            <div className="flex justify-center space-x-4">
               <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105">
                 <Download className="w-4 h-4 mr-2" />
                 Download CV
               </Button>
               <Button
                 variant="outline"
-                className="border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-cyan-400 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-slate-300 bg-slate-700/50 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
                 asChild
               >
                 <Link to="/contact">
