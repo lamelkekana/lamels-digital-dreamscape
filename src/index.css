@@ -106,8 +106,4 @@
       transform: translate(0px, 0px) scale(1);
     }
   }
-  
-  .skill-index {
-    @apply inline-flex items-center justify-center w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-bold rounded-full text-sm mr-3;
-  }
 }

@@ -32,7 +32,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-8">
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="text-center mb-16">
@@ -57,8 +57,13 @@ const About = () => {
             <CardContent className="space-y-6">
               {skills.map((skill, index) => (
                 <div key={skill.name} className="flex items-start">
-                  <span className="skill-index">{index + 1}</span>
-                  <div>
+                  <div className="flex flex-col items-center mr-4 mt-1">
+                    <div className="w-1 h-6 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full"></div>
+                    {index < skills.length - 1 && (
+                      <div className="w-px h-8 bg-slate-600 mt-1"></div>
+                    )}
+                  </div>
+                  <div className="flex-1">
                     <h3 className="text-lg font-semibold text-slate-200 mb-2">
                       {skill.name}
                     </h3>
@@ -81,10 +86,10 @@ const About = () => {
               <CardTitle className="text-2xl font-bold gradient-text">Tools & Platforms</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-3">
                 {tools.map((tool, index) => (
                   <div key={tool} className="flex items-center">
-                    <span className="skill-index text-xs">{index + 1}</span>
+                    <div className="w-1 h-4 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full mr-3"></div>
                     <span className="text-slate-300">{tool}</span>
                   </div>
                 ))}
