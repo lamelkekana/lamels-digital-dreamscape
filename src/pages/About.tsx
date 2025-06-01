@@ -1,12 +1,12 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Database, BarChart3, PieChart, Brain, Cloud, GitBranch, Laptop, Server, FileSpreadsheet, Github, Container, Activity } from "lucide-react";
+import { Database, BarChart3, PieChart, Brain, Cloud, GitBranch, Laptop, Server, FileSpreadsheet, Github, Container, Activity, Scissors, Code } from "lucide-react";
 
 const About = () => {
   const skills = [
     {
       title: "Data Manipulation",
-      icon: Database,
+      icon: Scissors,
       points: ["Data cleaning", "Pandas, NumPy"]
     },
     {
@@ -26,7 +26,7 @@ const About = () => {
     },
     {
       title: "Databases",
-      icon: Server,
+      icon: Database,
       points: ["SQL"]
     },
     {
@@ -48,7 +48,7 @@ const About = () => {
     },
     {
       title: "MySQL",
-      icon: Server
+      icon: Database
     },
     {
       title: "Excel",
@@ -69,6 +69,10 @@ const About = () => {
     {
       title: "Docker",
       icon: Container
+    },
+    {
+      title: "Python",
+      icon: Code
     }
   ];
 

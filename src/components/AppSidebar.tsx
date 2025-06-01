@@ -10,6 +10,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 
 const menuItems = [
@@ -40,10 +41,11 @@ export function AppSidebar() {
 
   return (
     <Sidebar className="border-r border-slate-700">
-      <SidebarHeader className="p-6">
+      <SidebarHeader className="p-6 flex flex-row items-center justify-between">
         <Link to="/" className="text-2xl font-bold gradient-text">
           Portfolio
         </Link>
+        <SidebarTrigger className="md:hidden" />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

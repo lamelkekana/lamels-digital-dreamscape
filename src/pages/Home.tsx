@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -61,23 +60,20 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Profile Image with Blob Animation - Right Side */}
+          {/* Profile Image with Subtle Square Blob - Right Side */}
           <div className="relative hidden md:block">
-            {/* Animated Blob Background */}
-            <div className="absolute inset-0 w-80 h-80 opacity-20">
-              <div className="absolute w-full h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blob-animation"></div>
-              <div className="absolute w-4/5 h-4/5 top-10 left-10 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blob-animation" style={{ animationDelay: '2s' }}></div>
-              <div className="absolute w-3/5 h-3/5 top-20 left-20 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full blob-animation" style={{ animationDelay: '4s' }}></div>
+            {/* Subtle Square Blob Background */}
+            <div className="absolute inset-0 w-80 h-80 opacity-10">
+              <div className="absolute w-full h-full bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-3xl transform rotate-3 animate-pulse"></div>
             </div>
             
-            {/* Profile Image Container */}
+            {/* Profile Image Container - Empty for now */}
             <div className="relative z-10 flex items-center justify-center w-80 h-80">
-              <div className="w-64 h-64 rounded-3xl overflow-hidden border-2 border-slate-500/40 shadow-2xl brightness-90 transition-all duration-300 hover:scale-105">
-                <img
-                  src="/lovable-uploads/a8a8add2-c56f-429e-b82e-477884bcdf1e.png"
-                  alt="Lamel Kekana"
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-64 h-64 rounded-3xl border-2 border-slate-500/40 shadow-2xl bg-slate-800/50 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                <div className="text-slate-400 text-center">
+                  <div className="w-16 h-16 bg-slate-600/50 rounded-full mx-auto mb-2"></div>
+                  <p className="text-sm">Image placeholder</p>
+                </div>
               </div>
             </div>
           </div>
