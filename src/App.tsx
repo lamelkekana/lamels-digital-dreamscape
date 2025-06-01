@@ -19,7 +19,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.PROD ? '/lamels-digital-dreamscape' : '/'}>
         <SidebarProvider>
           <div className="min-h-screen flex w-full">
             <AppSidebar />
