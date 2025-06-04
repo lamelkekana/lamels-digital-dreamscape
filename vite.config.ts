@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/lamels-digital-dreamscape/' : '/',
+  base: '/', // Temporarily use root path for both dev and production
   server: {
     host: "::",
     port: 8080,
