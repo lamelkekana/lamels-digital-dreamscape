@@ -1,10 +1,13 @@
+
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  console.log("Home component is rendering");
+  
   return (
-    <div className="min-h-screen flex items-center relative overflow-hidden">
+    <div className="min-h-screen flex items-center relative overflow-hidden bg-slate-900">
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
         <div className="flex items-center justify-between">
           {/* Text Content */}
@@ -12,7 +15,7 @@ const Home = () => {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold text-slate-100 leading-tight">
                 Hello I'm{" "}
-                <span className="gradient-text">Lamel Kekana</span>
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Lamel Kekana</span>
               </h1>
               <p className="text-2xl text-slate-400">I am a data scientist</p>
             </div>
