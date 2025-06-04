@@ -12,7 +12,7 @@ const Projects = () => {
       hasDemo: true,
       codeUrl: "https://github.com/lamelkekana/Automated-Data-Pipeline-Interactive-Dashboard",
       liveUrl: "https://insightportals.fyi/",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=200&fit=crop",
+      image: "/lovable-uploads/d8f3cf42-11af-4157-b8d5-626d18f6c4a6.png",
       needsAccess: true
     },
     {
@@ -22,7 +22,7 @@ const Projects = () => {
       hasDemo: true,
       codeUrl: "https://github.com/lamelkekana/Team4_anime_app",
       liveUrl: "https://team4anime.streamlit.app/",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=200&fit=crop",
+      image: "/lovable-uploads/0b1f9729-95b8-4ac0-b7f4-be4b151700ac.png",
       needsAccess: false
     },
     {
@@ -32,7 +32,7 @@ const Projects = () => {
       hasDemo: false,
       codeUrl: "https://github.com/lamelkekana/Fuel_Economy_Insights",
       liveUrl: "",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop",
+      image: "/lovable-uploads/339b3520-7264-4fe7-b731-1a4b1d73ab46.png",
       needsAccess: false
     },
     {
@@ -42,7 +42,7 @@ const Projects = () => {
       hasDemo: false,
       codeUrl: "https://github.com/lamelkekana/Life-Insurance-Exploratory-Data-Analysis",
       liveUrl: "",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=200&fit=crop",
+      image: "/lovable-uploads/01f1c254-e6de-4d66-975b-2873c327153d.png",
       needsAccess: false
     },
     {
@@ -52,7 +52,7 @@ const Projects = () => {
       hasDemo: false,
       codeUrl: "https://github.com/lamelkekana/Obesity_Prediction",
       liveUrl: "",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=200&fit=crop",
+      image: "/lovable-uploads/375836e9-62e1-472d-a613-3c5bf6d546d6.png",
       needsAccess: false
     }
   ];
@@ -81,14 +81,17 @@ const Projects = () => {
             <Card key={project.title} className="bg-slate-800/50 border-slate-700 card-hover group overflow-hidden">
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden cursor-pointer" onClick={() => handleImageClick(project.codeUrl)}>
+                <div className="absolute inset-0 bg-slate-900/20"></div>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/90 via-slate-800/30 to-transparent"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Github className="w-8 h-8 text-white" />
+                  <div className="bg-slate-900/80 p-3 rounded-full backdrop-blur-sm">
+                    <Github className="w-8 h-8 text-white" />
+                  </div>
                 </div>
               </div>
 
