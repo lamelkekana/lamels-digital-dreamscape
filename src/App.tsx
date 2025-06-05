@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,8 +24,9 @@ const App = () => (
             <AppSidebar />
             <main className="flex-1 relative">
               {/* Mobile Navigation Trigger */}
-              <div className="md:hidden fixed top-4 left-4 z-50">
-                <SidebarTrigger className="bg-slate-800 hover:bg-slate-700 text-slate-300" />
+              <div className="md:hidden fixed top-4 left-4 z-50 flex items-center space-x-2 bg-slate-800 p-2 rounded">
+                <SidebarTrigger className="text-slate-300 hover:text-white" />
+                <span className="text-slate-300 font-medium select-none">Navigation</span>
               </div>
               <Routes>
                 <Route path="/" element={<Home />} />
