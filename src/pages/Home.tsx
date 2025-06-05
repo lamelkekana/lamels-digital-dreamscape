@@ -10,9 +10,9 @@ const Home = () => {
   return (
     <div className="min-h-screen flex items-center relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-12">
           {/* Text Content */}
-          <div className="space-y-8 max-w-2xl">
+          <div className="space-y-8 max-w-2xl flex-1">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold text-slate-100 leading-tight">
                 Hello I'm{" "}
@@ -54,25 +54,23 @@ const Home = () => {
               <Button
                 variant="outline"
                 className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-slate-300 bg-slate-700/50 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
-                asChild
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Link to="/contact">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Get in Touch
-                </Link>
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Get in Touch
               </Button>
             </div>
           </div>
 
-          {/* Animated Tech Screen - Right Side */}
-          <div className="relative hidden md:block">
+          {/* Animated Tech Screen - Positioned closer to text */}
+          <div className="relative hidden lg:flex items-center justify-start flex-shrink-0 ml-8">
             {/* Subtle Background Glow */}
             <div className="absolute inset-0 w-80 h-80 opacity-20">
               <div className="absolute w-full h-full bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-3xl transform rotate-3 animate-pulse"></div>
             </div>
             
             {/* Tech Screen */}
-            <div className="relative z-10 flex items-center justify-center">
+            <div className="relative z-10">
               <TechScreen />
             </div>
           </div>

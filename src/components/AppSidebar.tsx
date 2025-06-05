@@ -1,6 +1,6 @@
 
 import { Home, User, FolderOpen, Mail } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -16,22 +16,22 @@ import {
 const menuItems = [
   {
     title: "Home",
-    url: "/",
+    sectionId: "home",
     icon: Home,
   },
   {
     title: "About",
-    url: "/about",
+    sectionId: "about",
     icon: User,
   },
   {
     title: "Projects",
-    url: "/projects",
+    sectionId: "projects",
     icon: FolderOpen,
   },
   {
     title: "Contact",
-    url: "/contact",
+    sectionId: "contact",
     icon: Mail,
   },
 ];
@@ -39,12 +39,22 @@ const menuItems = [
 export function AppSidebar() {
   const location = useLocation();
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Sidebar className="border-r border-slate-700">
       <SidebarHeader className="p-6 flex flex-row items-center justify-between">
-        <Link to="/" className="text-2xl font-bold gradient-text">
+        <button 
+          onClick={() => scrollToSection('home')}
+          className="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity"
+        >
           Portfolio
-        </Link>
+        </button>
         <SidebarTrigger className="md:hidden" />
       </SidebarHeader>
       <SidebarContent>
@@ -54,14 +64,11 @@ export function AppSidebar() {
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton 
-                    asChild 
-                    isActive={location.pathname === item.url}
-                    className="w-full justify-start px-6 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 data-[active=true]:text-cyan-400 data-[active=true]:bg-slate-800/50"
+                    className="w-full justify-start px-6 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 cursor-pointer"
+                    onClick={() => scrollToSection(item.sectionId)}
                   >
-                    <Link to={item.url}>
-                      <item.icon className="w-5 h-5" />
-                      <span>{item.title}</span>
-                    </Link>
+                    <item.icon className="w-5 h-5" />
+                    <span>{item.title}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
