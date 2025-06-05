@@ -2,12 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import TechScreen from "@/components/TechScreen";
 
 const Home = () => {
   console.log("Home component is rendering");
   
   return (
-    <div className="min-h-screen flex items-center relative overflow-hidden bg-slate-900">
+    <div className="min-h-screen flex items-center relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
         <div className="flex items-center justify-between">
           {/* Text Content */}
@@ -63,21 +64,16 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Profile Image with Subtle Square Blob - Right Side */}
+          {/* Animated Tech Screen - Right Side */}
           <div className="relative hidden md:block">
-            {/* Subtle Square Blob Background */}
-            <div className="absolute inset-0 w-80 h-80 opacity-10">
+            {/* Subtle Background Glow */}
+            <div className="absolute inset-0 w-80 h-80 opacity-20">
               <div className="absolute w-full h-full bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-3xl transform rotate-3 animate-pulse"></div>
             </div>
             
-            {/* Profile Image Container - Empty for now */}
-            <div className="relative z-10 flex items-center justify-center w-80 h-80">
-              <div className="w-64 h-64 rounded-3xl border-2 border-slate-500/40 shadow-2xl bg-slate-800/50 flex items-center justify-center transition-all duration-300 hover:scale-105">
-                <div className="text-slate-400 text-center">
-                  <div className="w-16 h-16 bg-slate-600/50 rounded-full mx-auto mb-2"></div>
-                  <p className="text-sm">Image placeholder</p>
-                </div>
-              </div>
+            {/* Tech Screen */}
+            <div className="relative z-10 flex items-center justify-center">
+              <TechScreen />
             </div>
           </div>
         </div>

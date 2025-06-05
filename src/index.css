@@ -55,21 +55,25 @@
     @apply border-border;
   }
 
-  html, body {
+  html {
     height: 100%;
     margin: 0;
     padding: 0;
   }
 
   body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     @apply bg-slate-900 text-slate-100;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-    min-height: 100vh;
+    background-attachment: fixed;
   }
 
   #root {
     min-height: 100vh;
     width: 100%;
+    background: inherit;
   }
 }
 
@@ -99,5 +103,36 @@
     100% {
       transform: translate(0px, 0px) scale(1);
     }
+  }
+
+  @keyframes dataFlow {
+    0% {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 211, 238, 0.8);
+    }
+  }
+
+  .data-flow {
+    animation: dataFlow 3s infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s infinite;
   }
 }
