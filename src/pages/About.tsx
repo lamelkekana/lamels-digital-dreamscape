@@ -43,6 +43,20 @@ const About = () => {
 
   const tools = [
     {
+      title: "Python",
+      icon: (props) => (
+        <img 
+          {...props}
+          src="/lovable-uploads/python.svg" 
+          alt="Python Logo"
+          className="w-5 h-5"
+          style={{
+            filter: "invert(63%) sepia(58%) saturate(548%) hue-rotate(140deg) brightness(99%) contrast(92%)"
+          }}
+        />
+      )
+    },
+    {
       title: "Jupyter notebooks/Lab",
       icon: Laptop
     },
@@ -69,10 +83,6 @@ const About = () => {
     {
       title: "Docker",
       icon: Container
-    },
-    {
-      title: "Python",
-      icon: Code
     }
   ];
 
@@ -85,9 +95,17 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Passionate data scientist with expertise in machine learning, data visualization, 
-            and statistical analysis. I transform complex data into actionable insights that 
-            drive business decisions and create meaningful impact.
+            My name is Lamel Kekana, and I embarked on my data science journey with ExploreAI (now part of ALX),
+            a turning point that completely changed the direction of my life. Since then, I haven’t looked back,
+            this path truly aligns with my purpose and drives my passion every single day. I’m deeply fascinated
+            by the power of data and love diving into the intricate processes that transform raw numbers into
+            meaningful insights.
+          </p>
+          <br/>
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            As a cloud computing enthusiast, I enjoy deploying and running data workflows in the cloud, leveraging 
+            its scalability and flexibility to bring ideas to life. Outside of the data world, you’ll often find me in 
+            my creative space, producing music, it’s where I unwind, express myself, and let my imagination flow.
           </p>
         </div>
 

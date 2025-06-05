@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -16,9 +15,16 @@ const Home = () => {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold text-slate-100 leading-tight">
                 Hello I'm{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Lamel Kekana</span>
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Lamel Kekana
+                </span>
               </h1>
-              <p className="text-2xl text-slate-400">I am a data scientist</p>
+              <p className="text-2xl text-slate-400">
+                I am a{" "}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Data Scientist
+                </span>
+              </p>
             </div>
             
             <p className="text-lg text-slate-300 max-w-2xl leading-relaxed">
@@ -28,7 +34,7 @@ const Home = () => {
             {/* Social Links */}
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/lamelkekana"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg transition-all duration-300 hover:scale-110"
@@ -36,7 +42,7 @@ const Home = () => {
                 <Github className="w-6 h-6 text-slate-300" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/lamel-kekana/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg transition-all duration-300 hover:scale-110"
@@ -47,10 +53,14 @@ const Home = () => {
             
             {/* Action Buttons */}
             <div className="flex space-x-4">
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+              <a
+                href="/lovable-uploads/Lamel Kekana CV.pdf"
+                download
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center"
+              >
                 <Download className="w-4 h-4 mr-2" />
                 Download CV
-              </Button>
+              </a>
               <Button
                 variant="outline"
                 className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-slate-300 bg-slate-700/50 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
@@ -65,14 +75,9 @@ const Home = () => {
           </div>
 
           {/* Animated Tech Screen - Right Side */}
-          <div className="relative hidden md:block">
-            {/* Subtle Background Glow */}
-            <div className="absolute inset-0 w-80 h-80 opacity-20">
-              <div className="absolute w-full h-full bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-3xl transform rotate-3 animate-pulse"></div>
-            </div>
-            
+          <div className="relative hidden md:block w-full h-[600px]">
             {/* Tech Screen */}
-            <div className="relative z-10 flex items-center justify-center">
+            <div className="absolute top-[100px] left-[100px] z-10">
               <TechScreen />
             </div>
           </div>
