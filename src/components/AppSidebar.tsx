@@ -1,6 +1,6 @@
 
 import { Home, User, FolderOpen, Mail } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -16,22 +16,22 @@ import {
 const menuItems = [
   {
     title: "Home",
-    sectionId: "home",
+    url: "/",
     icon: Home,
   },
   {
     title: "About",
-    sectionId: "about",
+    url: "/about",
     icon: User,
   },
   {
     title: "Projects",
-    sectionId: "projects",
+    url: "/projects",
     icon: FolderOpen,
   },
   {
     title: "Contact",
-    sectionId: "contact",
+    url: "/contact",
     icon: Mail,
   },
 ];
@@ -39,22 +39,12 @@ const menuItems = [
 export function AppSidebar() {
   const location = useLocation();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <Sidebar className="border-r border-slate-700">
       <SidebarHeader className="p-6 flex flex-row items-center justify-between">
-        <button 
-          onClick={() => scrollToSection('home')}
-          className="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity"
-        >
+        <Link to="/" className="text-2xl font-bold gradient-text">
           Portfolio
-        </button>
+        </Link>
         <SidebarTrigger className="md:hidden" />
       </SidebarHeader>
       <SidebarContent>
@@ -64,11 +54,14 @@ export function AppSidebar() {
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton 
-                    className="w-full justify-start px-6 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 cursor-pointer"
-                    onClick={() => scrollToSection(item.sectionId)}
+                    asChild 
+                    isActive={location.pathname === item.url}
+                    className="w-full justify-start px-6 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 data-[active=true]:text-cyan-400 data-[active=true]:bg-slate-800/50"
                   >
-                    <item.icon className="w-5 h-5" />
-                    <span>{item.title}</span>
+                    <Link to={item.url}>
+                      <item.icon className="w-5 h-5" />
+                      <span>{item.title}</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
