@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="min-h-screen flex items-center relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
-        <div className="flex items-center justify-between">
+        <div className="flex items-end justify-between gap-8">
           {/* Text Content */}
           <div className="space-y-8 max-w-2xl">
             <div className="space-y-4">
@@ -64,15 +64,15 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Animated Tech Screen - Right Side */}
-          <div className="relative hidden md:block">
+          {/* Animated Tech Screen - Positioned closer to text */}
+          <div className="relative hidden md:block ml-8">
             {/* Subtle Background Glow */}
-            <div className="absolute inset-0 w-80 h-80 opacity-20">
+            <div className="absolute -inset-4 w-80 h-80 opacity-20">
               <div className="absolute w-full h-full bg-gradient-to-br from-cyan-400/30 to-blue-500/30 rounded-3xl transform rotate-3 animate-pulse"></div>
             </div>
             
             {/* Tech Screen */}
-            <div className="relative z-10 flex items-center justify-center">
+            <div className="relative z-10 flex items-end justify-center">
               <TechScreen />
             </div>
           </div>
